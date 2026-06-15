@@ -1,11 +1,8 @@
----
 name: Complete Devops Project Pipeline
-
-on:
+"on":
   push:
     branches:
       - main
-
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
@@ -19,7 +16,7 @@ jobs:
         run: |
           docker build -t devopsmeet/devops:${{env.SHORT_SHA}} .
       - name: Login to DockerHub
-        run: |
-          echo "${{secrets.DOCKERHUB_TOKEN}} | docker login -u ${{secrets.DOCKERHUB_USERNAME}}" --password-stdin
-      - name: Push to DockerHub
-          docker push devopsmeet/devops:${{env.SHORT_SHA}}
+        run: >
+          echo "${{secrets.DOCKERHUB_TOKEN}} | docker login -u
+          ${{secrets.DOCKERHUB_USERNAME}}" --password-stdin
+      - name: "Push to DockerHub docker push devopsmeet/devops:${{env.SHORT_SHA}}"
