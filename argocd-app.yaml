@@ -1,4 +1,4 @@
-appversion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: complete-devops-project
@@ -8,11 +8,11 @@ spec:
   source:
     repoURL: "https://github.com/Manmeet2607/devops-project"
     targetRevision: HEAD
-    path: complete-devops-project-time-printer  
+    path: complete-devops-project-time-printer
   destination:
     server: "https://kubernetes.default.svc"
     namespace: default
   syncPolicy:
     automated:
-      prune: ture
+      prune: true
       selfHeal: true
