@@ -1,6 +1,6 @@
 image:
   repository: devopsmeet/devops
-  tag: latest
+  tag 092212d
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
